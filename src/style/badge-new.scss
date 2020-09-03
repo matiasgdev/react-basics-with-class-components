@@ -1,0 +1,56 @@
+
+@import 'config';
+
+.hero {
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+      to right,
+      rgba(0,0,0,.3),
+      rgba($p-color, 0.7)
+     );
+    z-index: 10;
+  }
+
+  &_description {
+    font-size: 2em;
+    z-index: 1000;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+      color: white;
+      h1 {
+      font-weight: 500;
+    }
+    span {
+      color: $smoke-color;
+      font-weight: 100;
+    }
+  }
+  &_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.badgeNew {
+  &__container {
+    background-color: rgba(white, 0.7);
+    position: relative;
+    z-index: 1000;
+    bottom: 150px;
+    padding: 2em;
+  }
+}

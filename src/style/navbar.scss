@@ -1,0 +1,25 @@
+@import 'config';
+
+.nav {
+  height: 4em;
+  background: $s-color;
+  padding: .5em 0;
+  display: flex;
+  align-items: center;
+  &_content {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    text-decoration: none;
+    &:hover {
+      span {
+        color: darken($smoke-color, 5%);
+      }
+    }
+    span {
+      color: $smoke-color;
+      margin-left: .5em;
+    }
+  }
+}

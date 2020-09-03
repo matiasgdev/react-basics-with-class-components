@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
+@import 'utils';
+@import 'mixins';
+
+$font: 'Roboto', sans-serif;
+$p-color: rgb(1, 60, 80);
+$s-color: #222831;
+$bg-p-color: rgb(236, 236, 236);
+$smoke-color: rgb(230,230,230);
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4 ,h5, p, figure {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+}
+

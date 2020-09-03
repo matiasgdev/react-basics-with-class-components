@@ -1,0 +1,41 @@
+@import 'config';
+
+.badge {
+  width: 24em;
+  height: 10em;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $s-color;
+  color: white;
+  &_header {
+    flex-basis: 30%;
+    height: 5em;
+    width: 100%;
+    text-align: center;
+    img {
+      height: 100%;
+      vertical-align: top;
+      object-fit: contain;
+    }
+  }
+  &_content {
+    flex-basis: 70%;
+    @include flex-center(column);
+    align-items: flex-start;
+    justify-content: space-around;
+    p {
+      font-weight: 500;
+      font-size: 1.3em;
+    }
+    span {
+      font-size: 14px;
+      color: $smoke-color;
+    }
+  }
+  &_socials {
+    margin-top: 1em;
+    flex-basis: 100%;
+    text-align: left;
+  }
+}

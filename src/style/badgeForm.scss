@@ -1,0 +1,55 @@
+@import 'config';
+
+
+.badgeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1em;
+  background: $s-color;
+  height: 35em;
+  width: 30em;
+  &__title {
+    color: $smoke-color;
+    text-align: center;
+  }
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column ;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 15em;
+  color: white;
+  label {
+    color: $smoke-color;
+    font-weight: 400; 
+    font-size: 1em;
+
+  }
+
+  input {
+    width: 90%;
+    padding: 1em .5em;
+    margin: .7em 0;
+    border: none;
+    outline: none;  
+    background: rgba(#fff, 0.8);
+  }
+
+  button {
+    align-self: center;
+    padding: 1em 1.5em;
+    outline: none;
+    border: none;
+    background-color: rgb(87, 145, 0);
+    color: white;
+    font-weight: bold;
+    font-family: $font;
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
