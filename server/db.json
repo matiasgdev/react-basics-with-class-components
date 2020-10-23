@@ -415,21 +415,11 @@
       "avatarUrl": "https://www.gravatar.com/avatar/570f8b0138bcb82537d55ab7732c8c4f?d=identicon"
     },
     {
-      "firstName": "Richard",
-      "lastName": "Kaufman López",
-      "email": "richardbkaufman@gmail.com",
-      "avatarUrl": "https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon",
-      "job": "Frontend Engineer @ Kickass Partners",
-      "twitter": "sparragus",
-      "id": "EYR2BVQ"
-    },
-    {
-      "firstName": "asda",
-      "lastName": "sasdas",
-      "email": "asd@asd.com",
-      "job": "sadf asdf asd fsadfsdfsddddddddddddddddddddddddddddddddddddddddd fsdfsaf sdf asdf asdf asd",
-      "twitter": "asd",
-      "id": "0toMtdv"
+      "firstName": "Matias Gabriel",
+      "lastName": "Navarro",
+      "email": "matiasg.developer@gmail.com",
+      "job": "Javascript developer",
+      "twitter": "matiasgdev"
     }
   ]
 }
