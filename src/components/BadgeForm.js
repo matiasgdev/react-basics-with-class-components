@@ -1,22 +1,37 @@
 import React, { Component } from 'react'
 import '../style/badgeForm.scss'
 
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop * 2) 
+
 export default class BadgeForm extends Component {
 
+  textInput = React.createRef()
+
+  componentDidMount() {
+    scrollToRef(this.textInput)
+    this.textInput.current.focus()
+  }
+
+
   render() {
-    const { onChange, formData } = this.props
+    const { onChange, formData, onSubmit, error, title } = this.props
 
     return (
       <div className="badgeForm">
-        <h2 className="badgeForm__title">New attendant</h2>
-
-        <form className="form">
+        
+        { error && <p className="error"> { error.message } </p> }
+      
+        <h2 className="badgeForm__title"> { title } </h2>
+        
+        <form className="form" onSubmit={ onSubmit }>
+          
           <label htmlFor="">First name:</label>
           <input 
             onChange={onChange}
             type="text" 
             name="firstName"
-            value={formData.fistName}
+            value={formData.firstName}
+            ref={this.textInput}
           />
           <label htmlFor="">Last name:</label>
           <input 
@@ -25,14 +40,21 @@ export default class BadgeForm extends Component {
             name="lastName"
             value={formData.lastName}
           />
-          <label htmlFor="">Twitter</label>
+          <label htmlFor="">Email:</label>
+          <input 
+            onChange={onChange}
+            type="email" 
+            name="email"
+            value={formData.email}
+          />
+          <label htmlFor="">Twitter:</label>
           <input 
             onChange={onChange}
             type="text" 
             name="twitter"
             value={formData.twitter}
           />
-          <label htmlFor="">Job</label>
+          <label htmlFor="">Job:</label>
           <input 
             onChange={onChange}
             type="text" 
@@ -42,7 +64,6 @@ export default class BadgeForm extends Component {
   
           <button 
             type="submit"
-            onClick={this.handleSubmit}
           >
             Save
           </button>

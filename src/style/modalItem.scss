@@ -1,0 +1,40 @@
+@import 'config';
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(black, .6);
+
+  display: grid;
+  place-items: center;
+
+  &__container {
+    position: relative;
+    height: 300px;
+    width: 400px;
+    background: rgb(236, 235, 235);
+    padding: .5em;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: .3em;
+    right: .5em;
+    color: rgb(107, 107, 107);
+    font-weight: bold;
+    font-size: .9em;
+    transform: scaleY(.8);
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+
+  &__content {
+    border: 1px solid red;
+    margin-top: 1em;
+    height: 90%;
+    
+  }
+}

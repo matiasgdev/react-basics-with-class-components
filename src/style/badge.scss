@@ -13,11 +13,13 @@
     height: 5em;
     width: 100%;
     text-align: center;
-    img {
-      height: 100%;
-      vertical-align: top;
-      object-fit: contain;
-    }
+    
+  }
+  &_gravatar {
+    height: 100%;
+    vertical-align: top;
+    object-fit: contain;
+    border-radius: 50%;
   }
   &_content {
     flex-basis: 70%;

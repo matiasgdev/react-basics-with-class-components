@@ -13,9 +13,20 @@ $link-color: #00bcd4;
   margin: 1em 0;
 }
 
+.error {
+  background: rgb(240, 115, 115);
+  padding: .5em;
+  color: white;
+}
+
 .container {
   margin: 0 auto;
   width: 70em;
+}
+
+.reset-link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .grid-2 {

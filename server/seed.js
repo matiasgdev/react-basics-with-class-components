@@ -16,7 +16,7 @@ function createBadges(limit = 50) {
       firstName,
       lastName,
       email,
-      jobTitle: faker.name.jobTitle(),
+      job: faker.name.jobTitle(),
       twitter: `${firstName}${lastName}${faker.address.zipCode()}`,
       avatarUrl: `https://www.gravatar.com/avatar/${md5(email)}?d=identicon`,
     });

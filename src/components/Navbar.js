@@ -1,6 +1,6 @@
 
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 import logo from '../images/badge-logo.png'
@@ -10,12 +10,13 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="nav">
-        <div className="container">
-          <Link to="/" className="nav_content">
-            <img width="30" src={logo} alt="Logo"/>
-            <span>Badge App</span>
-          </Link>
-        </div>
+        <Link to="/" className="nav_content">
+          <img width="30" src={logo} alt="Logo"/>
+          <span> Badge App </span>
+        </Link>
+        <Link to="/badges" className="reset-link">
+          List  
+        </Link>
       </nav>
     )
   }

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
-import Hero from '../components/Hero'
 import PageLoading from '../components/PageLoading'
-import '../style/badgeNew.scss'
+import Hero from '../components/Hero'
+
+import '../style/badgeEdit.scss'
 import api from '../api'
 
-class BadgeNew extends Component {
+class BadgeEdit extends Component {
 
   state = {
     loading: false,
@@ -20,6 +21,26 @@ class BadgeNew extends Component {
     } 
   }
 
+  componentDidMount() {
+    this.fetchData()  
+
+  }
+
+  fetchData = async () => {
+    this.setState({ loading: true, error: null })
+    let id = this.props.match.params.id
+
+    try {
+      const data = await api.badges.read(id)
+      this.setState({ loading: false, form: data })
+
+    } catch (err) {
+      this.setState({ loading: false, error: err})
+    }
+
+  }
+  
+
   handleChange = e => {
     this.setState({
       form: {
@@ -31,13 +52,15 @@ class BadgeNew extends Component {
 
   handleSubmit = async e => {
     e.preventDefault()
-    this.setState({loading: true, error: null })
+    this.setState({ loading: true, error: null })
 
-    try {
-      await api.badges.create(this.state.form)
+    const { form } = this.state
+    const id = this.props.match.params.id
+
+    try { 
+      await api.badges.update(id, form)
       this.setState({ loading: false })
 
-      // window.location = '/badges'
       this.props.history.push('/badges')
 
     } catch (err) {
@@ -46,7 +69,7 @@ class BadgeNew extends Component {
     
   }
 
-  render() {
+  render() {  
 
     const { firstName, lastName, job, twitter, email } = this.state.form
     const { loading, error } = this.state 
@@ -65,7 +88,7 @@ class BadgeNew extends Component {
             email = { email }
           />
           <BadgeForm 
-            title="New Attendant"
+            title="Edit Badge"
             onChange={ this.handleChange }
             formData={ this.state.form }
             onSubmit={ this.handleSubmit }
@@ -78,4 +101,4 @@ class BadgeNew extends Component {
   }
 }
 
-export default BadgeNew
+export default BadgeEdit
